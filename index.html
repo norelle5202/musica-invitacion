@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<style>
+body {
+  margin: 0;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+button {
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.18);
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: scale(1.08);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+</style>
+</head>
+
+<body>
+
+<button id="musicButton">🎵</button>
+
+<audio id="music">
+  <source src="https://raw.githubusercontent.com/norelle5202/musica-invitacion/main/Christina%20Perri%20-%20A%20Thousand%20Years%20%28PianoCello%20Cover%29%20%281%29.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const button = document.getElementById("musicButton");
+const music = document.getElementById("music");
+
+button.addEventListener("click", function() {
+
+  if (music.paused) {
+    music.play();
+    button.textContent = "⏸️";
+  } else {
+    music.pause();
+    button.textContent = "🎵";
+  }
+
+});
+</script>
+
+</body>
+</html>
